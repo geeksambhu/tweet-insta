@@ -22,8 +22,7 @@ def list_all_tweets(name):
 
     # keep grabbing tweets until there are no tweets left to grab
     while len(new_tweets) > 0:
-        print
-        "getting tweets before %s" % (oldest)
+        print ("getting tweets before %s" % (oldest))
 
         # all subsiquent requests use the max_id param to prevent duplicates
         new_tweets = api.user_timeline(name=name, count=20, max_id=oldest)
@@ -39,9 +38,8 @@ def list_all_tweets(name):
 
     outtweets = [[tweet.id_str, tweet.created_at, tweet.text.encode("utf-8")] for tweet in alltweets]
 
-    for tweet in outtweets:
-        pass
-        # print(tweet)
+    for tweet in alltweets:
+        print(tweet)
 
 
 if __name__ == '__main__':
