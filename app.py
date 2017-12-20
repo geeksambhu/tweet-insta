@@ -1,10 +1,11 @@
-from flask import Flask, render_template, Blueprint
+from flask import Flask, render_template, Blueprint,redirect,url_for
 from list_tweets import list_all_tweets
 app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    return "Hello TDD"
+    return redirect(url_for('.get_tweet'))
+
 @app.route("/tweet")
 def get_tweet():
     name = "geeksambhu"

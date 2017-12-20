@@ -12,7 +12,7 @@ def list_all_tweets(name):
     # initialize a list to hold all the tweepy Tweets
     alltweets = []
 
-    # make initial request for most recent tweets
+    # make initial request  tweets
     new_tweets = api.user_timeline(name=name, count=200, include_rts=True)
     for status in new_tweets:
 
@@ -20,5 +20,5 @@ def list_all_tweets(name):
         alltweets.append(status.text)
     return alltweets
 if __name__ == '__main__':
-    # pass in the username of the account you want to download
+    # pass in the username of the account
     list_all_tweets("abiralsambhu")
