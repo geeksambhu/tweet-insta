@@ -1,4 +1,5 @@
 import tweepy
+
 from config import consumer_key, consumer_secret, access_key, access_secret
 
 
@@ -12,36 +13,12 @@ def list_all_tweets(name):
     alltweets = []
 
     # make initial request for most recent tweets
-    new_tweets = api.user_timeline(name=name, count=200)
+    new_tweets = api.user_timeline(name=name, count=200, include_rts=True)
+    for status in new_tweets:
 
-    # save most recent tweets
-    alltweets.extend(new_tweets)
-
-    # save the id of the oldest tweet less one
-    oldest = alltweets[-1].id - 1
-
-    # keep grabbing tweets until there are no tweets left to grab
-    while len(new_tweets) > 0:
-        print ("getting tweets before %s" % (oldest))
-
-        # all subsiquent requests use the max_id param to prevent duplicates
-        new_tweets = api.user_timeline(name=name, count=20, max_id=oldest)
-
-        # save most recent tweets
-        alltweets.extend(new_tweets)
-
-        # update the id of the oldest tweet less one
-        oldest = alltweets[-1].id - 1
-
-        print ("...%s tweets listed so far" % (len(alltweets)))
-
-
-    outtweets = [[tweet.id_str, tweet.created_at, tweet.text.encode("utf-8")] for tweet in alltweets]
-
-    for tweet in alltweets:
-        print(tweet)
-
-
+        print(status.text)
+        alltweets.append(status.text)
+    return alltweets
 if __name__ == '__main__':
     # pass in the username of the account you want to download
-    list_all_tweets("geeksambhu")
+    list_all_tweets("abiralsambhu")
