@@ -2,6 +2,7 @@ import os
 import sys
 from config import client_id,client_secret
 from instagram.client import InstagramAPI
+import instaloader
 
 REDIRECT_URL="http://localhost:5000"
 
@@ -23,6 +24,14 @@ def get_insta_post(name):
 
     for media in recent_media:
         print('thumb_url', media.get_thumbnail_url())
+def testinsta(name):
+    L = instaloader.Instaloader()
+    f = L.get_profile_posts(name)
+    return f
+
+
 
 if __name__=="__main__":
-    get_insta_post("geeksambhu")
+    #get_insta_post("geeksambhu")
+    l=testinsta("geeksambhu")
+    print(list(l))
