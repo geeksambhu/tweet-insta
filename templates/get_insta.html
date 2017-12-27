@@ -15,7 +15,7 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li><a href="/tweet">Tweet</a></li>
-        <li class = "active"><a href="/insta">{{ name.capitalize() }} Insta Post</a></li>
+        <li class = "active"><a href="/insta"> Insta Post</a></li>
 
       </ul>
     </div>
@@ -28,7 +28,7 @@
       <h2>tweet-insta</h2>
       <ul class="nav nav-pills nav-stacked">
         <li><a href="/tweet">{{ name.capitalize() }} tweets</a></li>
-        <li class="active"><a href="/insta">{{ name.capitalize() }} Insta posts</a></li>
+        <li class="active"><a href="/insta"> Insta Download</a></li>
 
       </ul><br>
     </div>
@@ -36,10 +36,26 @@
 
     <div class="col-sm-9">
       <div class="well">
-        <h4>Insta Posts of {{ name.capitalize() }}</h4>
-         <ol class="list-group">
-             <li class="list-group-item"> Insta posts</li>
-         </ol>
+        <h4>Insta Download</h4>
+         <!DOCTYPE HTML>
+
+
+
+		<link rel="icon" href="https://cdn3.iconfinder.com/data/icons/picons-social/57/78-instagram-128.png" type="image/x-icon">
+
+	</head>
+	<body>
+		<div class="container">
+		<p><b>Download Instagram HD Photos (Full size): right click > save image </b></p>
+		<form action="" method="POST" >
+			<input type="url" id="input" name="iurl" placeholder="Enter image's link, https://www.instagram.com/p/BZtAXk7H4AG/?taken-by=geeksambhu" autocomplete="off" required >
+			<input type="submit" value="SUBMIT">
+		</form>
+
+		</div>
+	</body>
+
+
 
       </div>
     </div>
