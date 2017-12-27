@@ -26,10 +26,10 @@ def index():
 
         image = links.get('content')  # get its content
         while image != '':
-            return render_template("download.html", image=image)
+            return render_template("get_insta.html", name="geeksambhu",image=image)
                 # '<img src="' + image + '"' + 'align="center">'  # insert content in img tag
 
-    return render_template('get_insta.html',name="geeksambhu")
+    return render_template('get_insta.html',name="geeksambhu",image=None)
 
 
 

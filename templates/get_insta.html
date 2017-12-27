@@ -49,12 +49,16 @@
 		<p><b>Download Instagram HD Photos (Full size): right click > save image </b></p>
 		<form action="" method="POST" >
 			<input type="url" id="input" name="iurl" placeholder="Enter image's link, https://www.instagram.com/p/BZtAXk7H4AG/?taken-by=geeksambhu" autocomplete="off" required >
-			<input type="submit" value="SUBMIT">
-		</form>
+			<div class="downloadimage">
+          <input type="submit" value="Download">
 
+            </div>
+		</form>
+      {% if image %}
+          <a href="{{image}}" download="image.JPG">Download</a>
+          {% endif %}
 		</div>
 	</body>
-
 
 
       </div>
