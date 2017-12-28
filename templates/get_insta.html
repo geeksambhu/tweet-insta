@@ -28,7 +28,7 @@
       <h2>tweet-insta</h2>
       <ul class="nav nav-pills nav-stacked">
         <li><a href="/tweet">{{ name.capitalize() }} tweets</a></li>
-        <li class="active"><a href="/insta"> Insta Download</a></li>
+        <li class="active"><a href="/insta"> Insta Downloads</a></li>
 
       </ul><br>
     </div>
@@ -46,16 +46,16 @@
 	</head>
 	<body>
 		<div class="container">
-		<p><b>Download Instagram HD Photos (Full size): right click > save image </b></p>
+		<p><b>Download Instagram HD Photos </b></p>
 		<form action="" method="POST" >
 			<input type="url" id="input" name="iurl" placeholder="Enter image's link, https://www.instagram.com/p/BZtAXk7H4AG/?taken-by=geeksambhu" autocomplete="off" required >
 			<div class="downloadimage">
-          <input type="submit" value="Download">
+          <input type="submit" value="Submit">
 
             </div>
 		</form>
       {% if image %}
-          <a href="{{image}}" download="image.JPG">Download</a>
+          <button><a href="{{image}}" download="image.JPG">Download</a></button>
           {% endif %}
 		</div>
 	</body>
