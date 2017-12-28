@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <html>
+
 <body>
 <nav class="navbar navbar-inverse visible-xs">
   <div class="container-fluid">
@@ -36,7 +37,7 @@
 
     <div class="col-sm-9">
       <div class="well">
-        <h4>Insta Download</h4>
+        <h4>Insta Downloads</h4>
          <!DOCTYPE HTML>
 
 
@@ -55,7 +56,7 @@
             </div>
 		</form>
       {% if image %}
-          <button><a href="{{image}}" download="image.JPG">Download</a></button>
+         <a href="{{image}}" download="image.JPG"><button type="button" class="btn btn-primary">Download</button></a>
           {% endif %}
 		</div>
 	</body>
